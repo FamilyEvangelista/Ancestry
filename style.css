@@ -1,0 +1,423 @@
+/* ============================================
+   DESIGN TOKENS — Ledger & Record Card system
+   ============================================ */
+:root {
+  --ink-bg: #1B2420;        /* deep ledger-cover green-black */
+  --ink-bg-alt: #212B26;
+  --paper: #E8DFC8;         /* parchment record card */
+  --paper-dim: #DCD0AE;
+  --ink-text: #2A2118;      /* text on paper */
+  --cream-text: #EDE6D2;    /* text on dark */
+  --cream-text-dim: #B9B29C;
+  --brass: #A8853C;
+  --brass-bright: #C9A24E;
+  --burgundy: #7A3230;
+  --line: rgba(168, 133, 60, 0.35);
+  --line-strong: rgba(168, 133, 60, 0.6);
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Source Serif 4", serif;
+  --font-data: "IBM Plex Mono", monospace;
+
+  --radius-card: 2px;
+  --shadow-card: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--ink-bg);
+  color: var(--cream-text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(168,133,60,0.06), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(122,50,48,0.08), transparent 45%);
+}
+
+a { color: inherit; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+  color: var(--cream-text);
+}
+
+.catalog-number {
+  font-family: var(--font-data);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--brass-bright);
+  text-transform: uppercase;
+}
+
+/* ============================================
+   SITE HEADER / LEDGER COVER STRIP
+   ============================================ */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.site-title .archive-mark {
+  color: var(--brass-bright);
+  font-family: var(--font-data);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.75rem;
+  font-family: var(--font-data);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--cream-text-dim);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 3px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--brass-bright);
+  border-color: var(--brass);
+}
+
+/* ============================================
+   HERO (index.html)
+   ============================================ */
+.hero {
+  padding: 5rem 2rem 4rem;
+  max-width: 900px;
+}
+
+.hero .catalog-number { margin-bottom: 1.25rem; }
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  max-width: 14ch;
+}
+
+.hero p.lede {
+  margin-top: 1.5rem;
+  max-width: 52ch;
+  color: var(--cream-text-dim);
+  font-size: 1.15rem;
+}
+
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--font-data);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.85rem 1.5rem;
+  border: 1px solid var(--brass);
+  color: var(--cream-text);
+  transition: background 0.15s ease, color 0.15s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--brass);
+  color: var(--ink-bg);
+}
+
+.btn.primary {
+  background: var(--brass);
+  color: var(--ink-bg);
+}
+
+.btn.primary:hover {
+  background: var(--brass-bright);
+}
+
+/* Ledger divider line with tick marks, used between sections */
+.ledger-rule {
+  height: 1px;
+  background: var(--line);
+  margin: 0 2rem;
+  position: relative;
+}
+
+.section-label {
+  padding: 3rem 2rem 1.5rem;
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass-bright);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.preview-grid {
+  padding: 0 2rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ============================================
+   RECORD CARD — the signature component
+   Used in both the family tree and the archive
+   ============================================ */
+.record-card {
+  background: var(--paper);
+  color: var(--ink-text);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  padding: 1rem 1rem 1.1rem;
+  font-family: var(--font-body);
+  text-decoration: none;
+  display: block;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.record-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.45);
+}
+
+/* punched-corner detail, like an old library card */
+.record-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 16px 16px 0;
+  border-color: transparent var(--ink-bg) transparent transparent;
+}
+
+.record-card .catalog-number { color: var(--burgundy); margin-bottom: 0.5rem; }
+
+.record-card .thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--paper-dim);
+  border: 1px dashed rgba(42,33,24,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-data);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(42,33,24,0.5);
+  margin-bottom: 0.75rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.record-card h3 {
+  color: var(--ink-text);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.record-card .dates {
+  font-family: var(--font-data);
+  font-size: 0.78rem;
+  color: var(--burgundy);
+  margin-top: 0.35rem;
+}
+
+.record-card .bio-snip {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: rgba(42,33,24,0.75);
+  line-height: 1.45;
+}
+
+/* ============================================
+   TREE PAGE
+   ============================================ */
+.tree-wrap {
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+.tree-wrap .hint {
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  color: var(--cream-text-dim);
+  margin-bottom: 2rem;
+}
+
+.tree-container {
+  position: relative;
+  min-width: 900px;
+}
+
+svg.tree-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+svg.tree-lines path {
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+svg.tree-lines path.spouse-line {
+  stroke: var(--brass);
+  stroke-dasharray: 2 3;
+}
+
+.generation {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin-bottom: 5.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.generation .record-card {
+  width: 210px;
+}
+
+.generation-label {
+  position: absolute;
+  left: -1.5rem;
+  top: 0.5rem;
+  writing-mode: vertical-rl;
+  font-family: var(--font-data);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--cream-text-dim);
+  text-transform: uppercase;
+}
+
+.spouse-pair {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spouse-pair .spouse-mark {
+  color: var(--brass);
+  font-family: var(--font-data);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   ARCHIVE PAGE
+   ============================================ */
+.archive-controls {
+  padding: 2rem 2rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.archive-controls select,
+.archive-controls input {
+  font-family: var(--font-data);
+  font-size: 0.8rem;
+  background: var(--ink-bg-alt);
+  color: var(--cream-text);
+  border: 1px solid var(--line);
+  padding: 0.6rem 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+.archive-controls input::placeholder { color: var(--cream-text-dim); }
+
+.archive-grid {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.record-card .media-type {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.9rem;
+  font-family: var(--font-data);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+}
+
+.empty-state {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--cream-text-dim);
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem;
+  font-family: var(--font-data);
+  font-size: 0.72rem;
+  color: var(--cream-text-dim);
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .site-header { padding: 1rem 1.25rem; }
+  .hero { padding: 3rem 1.25rem 2.5rem; }
+  .section-label, .preview-grid, .archive-grid, .archive-controls, .tree-wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .generation { flex-direction: column; align-items: center; gap: 1.5rem; }
+  .generation .record-card { width: 100%; max-width: 280px; }
+}

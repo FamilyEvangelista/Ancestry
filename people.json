@@ -1,0 +1,83 @@
+{
+  "familyName": "Whitfield",
+  "people": [
+    {
+      "id": "james-whitfield",
+      "name": "James Whitfield",
+      "born": "1888",
+      "died": "1970",
+      "generation": 1,
+      "spouse": "eleanor-whitfield",
+      "parents": [],
+      "bio": "Railway engineer. Emigrated from Yorkshire in 1910 and settled in the Hudson Valley.",
+      "media": [
+        { "id": "m1", "type": "photo", "title": "James, c. 1920", "driveLink": "" },
+        { "id": "m2", "type": "document", "title": "Ship manifest, 1910 crossing", "driveLink": "" }
+      ]
+    },
+    {
+      "id": "eleanor-whitfield",
+      "name": "Eleanor Whitfield",
+      "born": "1890",
+      "died": "1965",
+      "generation": 1,
+      "spouse": "james-whitfield",
+      "parents": [],
+      "bio": "Schoolteacher and, later, the town's postmaster for eighteen years.",
+      "media": [
+        { "id": "m3", "type": "photo", "title": "Eleanor at the schoolhouse", "driveLink": "" }
+      ]
+    },
+    {
+      "id": "margaret-whitfield",
+      "name": "Margaret Whitfield",
+      "born": "1915",
+      "died": "1998",
+      "generation": 2,
+      "spouse": "charles-doyle",
+      "parents": ["james-whitfield", "eleanor-whitfield"],
+      "bio": "Eldest daughter. Trained as a nurse and served during the Second World War.",
+      "media": [
+        { "id": "m4", "type": "photo", "title": "Margaret in nursing uniform, 1943", "driveLink": "" },
+        { "id": "m5", "type": "video", "title": "Home film, 1962 reunion", "driveLink": "" }
+      ]
+    },
+    {
+      "id": "charles-doyle",
+      "name": "Charles Doyle",
+      "born": "1912",
+      "died": "1990",
+      "generation": 2,
+      "spouse": "margaret-whitfield",
+      "parents": [],
+      "bio": "Carpenter by trade. Built the family's Vermont cabin by hand in 1951.",
+      "media": []
+    },
+    {
+      "id": "robert-whitfield",
+      "name": "Robert Whitfield",
+      "born": "1918",
+      "died": "2001",
+      "generation": 2,
+      "spouse": "",
+      "parents": ["james-whitfield", "eleanor-whitfield"],
+      "bio": "Served in the Pacific theater. Later ran the family hardware store for four decades.",
+      "media": [
+        { "id": "m6", "type": "document", "title": "Discharge papers, 1946", "driveLink": "" }
+      ]
+    },
+    {
+      "id": "susan-doyle",
+      "name": "Susan Doyle",
+      "born": "1945",
+      "died": "",
+      "generation": 3,
+      "spouse": "",
+      "parents": ["margaret-whitfield", "charles-doyle"],
+      "bio": "Grew up in Poughkeepsie. Keeper of the family's photo albums today.",
+      "media": [
+        { "id": "m7", "type": "photo", "title": "Susan's christening, 1945", "driveLink": "" }
+      ]
+    }
+  ]
+}
