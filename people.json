@@ -1,9 +1,9 @@
 {
-  "familyName": "Whitfield",
+  "familyName": "Evangelista",
   "people": [
     {
       "id": "james-whitfield",
-      "name": "James Whitfield",
+      "name": "James Evangelista",
       "born": "1888",
       "died": "1970",
       "generation": 1,
@@ -17,7 +17,7 @@
     },
     {
       "id": "eleanor-whitfield",
-      "name": "Eleanor Whitfield",
+      "name": "Eleanor Evangelista",
       "born": "1890",
       "died": "1965",
       "generation": 1,
@@ -30,7 +30,7 @@
     },
     {
       "id": "margaret-whitfield",
-      "name": "Margaret Whitfield",
+      "name": "Margaret Evangelista",
       "born": "1915",
       "died": "1998",
       "generation": 2,
@@ -55,7 +55,7 @@
     },
     {
       "id": "robert-whitfield",
-      "name": "Robert Whitfield",
+      "name": "Robert Evangelista",
       "born": "1918",
       "died": "2001",
       "generation": 2,
