@@ -1,4 +1,4 @@
-# The Evangelista Archive — starter site
+# The Evangelista Archive:
 
 This is a static website (no server, no build step) meant for GitHub Pages.
 Everything about a person, and every photo/document/video they're linked to,
