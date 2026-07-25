@@ -1,9 +1,9 @@
-// Loads data/people.json once and exposes small helpers.
+// Loads people.json once and exposes small helpers.
 // Every page that needs family data calls loadFamilyData() first.
 
 async function loadFamilyData() {
-  const res = await fetch("data/people.json");
-  if (!res.ok) throw new Error("Could not load data/people.json");
+  const res = await fetch("people.json");
+  if (!res.ok) throw new Error("Could not load people.json");
   const data = await res.json();
   data.byId = {};
   data.people.forEach(p => (data.byId[p.id] = p));

@@ -2,6 +2,28 @@
   "familyName": "Evangelista",
   "people": [
     {
+      "id": "uncatalogued",
+      "name": "Uncatalogued Records",
+      "born": "",
+      "died": "",
+      "generation": 0,
+      "spouse": "",
+      "parents": [],
+      "bio": "Recently uploaded documents and photos, not yet linked to a specific person in the tree. Tell Claude who each of these belongs to and it'll move them to the right person.",
+      "media": [
+        { "id": "u1", "type": "photo", "title": "123_1.jpeg", "driveLink": "123_1.jpeg" },
+        { "id": "u2", "type": "document", "title": "Albert Evangelista, birth certificate", "driveLink": "Albert%20Evangelista%20BC.pdf" },
+        { "id": "u3", "type": "document", "title": "Concetta, birth certificate", "driveLink": "BirthCert_Concetta.pdf" },
+        { "id": "u4", "type": "document", "title": "Carmela Cannito, death certificate", "driveLink": "Carmela%20Cannito%20Death%20Cert.pdf" },
+        { "id": "u5", "type": "document", "title": "Carmela Masiello", "driveLink": "Carmela%20Masiello.pdf" },
+        { "id": "u6", "type": "document", "title": "Concetta & Angelo, marriage certificate", "driveLink": "Concetta%20%2B%20Angelo%20MC%20-1.pdf" },
+        { "id": "u7", "type": "document", "title": "Concetta Renza Evangelista, naturalization", "driveLink": "Concetta%20Renza%20Evangelista%20Naturalizarion.pdf" },
+        { "id": "u8", "type": "photo", "title": "IMG_9792", "driveLink": "IMG_9792.JPG" },
+        { "id": "u9", "type": "document", "title": "Maria Rex, biglietto (ship ticket)", "driveLink": "Maria%20Rex%20Biglietto.pdf" },
+        { "id": "u10", "type": "document", "title": "Masiello–Cannito family history", "driveLink": "masiello_cannito%20history.pdf" }
+      ]
+    },
+    {
       "id": "james-whitfield",
       "name": "James Evangelista",
       "born": "1888",
